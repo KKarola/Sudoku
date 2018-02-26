@@ -1,7 +1,11 @@
 public class Sudoku {
-    boolean solve = false;
 
-    int tab[][] = {
+    public Sudoku() {
+        fill();
+    }
+
+    private boolean solve = false;
+    private int tab[][] = {
             {0, 0, 4, 0, 5, 2, 1, 0, 8},
             {0, 2, 7, 1, 0, 0, 4, 0, 0},
             {9, 0, 0, 0, 7, 0, 0, 6, 0},
@@ -13,7 +17,7 @@ public class Sudoku {
             {5, 0, 3, 2, 6, 0, 7, 0, 0}
     };
 
-    public void fill() {
+    private void fill() {
         while (!solve) {
             solve = true;
             for (int i = 0; i < 9; i++) {
@@ -28,7 +32,7 @@ public class Sudoku {
     }
 
 
-    public void check(int i, int j) {
+    private void check(int i, int j) {
         boolean[] array = new boolean[9];
         int amount = 0;
         int number = 0;
@@ -85,4 +89,9 @@ public class Sudoku {
         }
     }
 
+    public static void main(String[] args) {
+        Sudoku sudoku = new Sudoku();
+        System.out.println("Rozwiązanie prostej tablicy sudoku:\n");
+        sudoku.print();
+    }
 }
