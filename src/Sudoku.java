@@ -80,7 +80,7 @@ public class Sudoku {
                     System.out.print(" ");
             }
             System.out.println(" ");
-            if ((i + 1) % 3 == 0)
+            if (((i + 1) % 3 == 0) && i != 8)
                 System.out.println(" ");
         }
     }
